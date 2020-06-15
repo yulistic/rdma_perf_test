@@ -13,7 +13,7 @@ do
         echo "$f"
         # cat $f
         # egrep "128|1024|4096|16384|65536|1048576" $f | grep -v "Mtu" | grep -v "TX depth"
-        egrep "128|1024|4096|16384|65536|1048576" $f | grep -v "Mtu"  | grep -v "TX depth" |tr -s " " |cut -d " " -f 5 | tr -s " " | tee temp.out
+        egrep "128 |1024 |4096 |16384 |65536 |1048576 " $f | grep -v "Mtu"  | grep -v "TX depth" |tr -s " " |cut -d " " -f 5 | tr -s " " | tee temp.out
         count=`cat temp.out | wc -l`
         if [ $count -gt 6 ]; then
             echo "[WARN] Line count does not match to 6. File name: $f"
@@ -28,7 +28,7 @@ do
         echo $f
         # cat $f
         # egrep "128|1024|4096|16384|65536|1048576" $f | grep -v "Mtu"
-        egrep "128|1024|4096|16384|65536|1048576" $f | grep -v "Mtu" |tr -s " " |cut -d " " -f 8 | tr -s " " | tee temp.out
+        egrep "128 |1024 |4096 |16384 |65536 |1048576 " $f | grep -v "Mtu" |tr -s " " |cut -d " " -f 8 | tr -s " " | tee temp.out
         count=`cat temp.out | wc -l`
         if [ $count -gt 6 ]; then
             echo "[WARN] Line count does not match to 6. File name: $f"
